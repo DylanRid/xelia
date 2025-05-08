@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xelia - Home</title>
+    <link rel="icon" href="xelia.svg" type="image/svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @font-face {
@@ -106,12 +107,19 @@
         <form class="flex flex-col bg-[#ffffff] border border-[#e3e1dd] hover:border-[#74b0fb] focus-within:border-[#74b0fb] py-3 px-4 max-w-2xl w-full rounded-lg">
             <textarea placeholder="Busca o pregunta lo que necesites de tu espacio de trabajo..." class="focus:outline-none w-full h-16 resize-none mb-2"></textarea>
             <div class="flex items-center">
-                <div class="bg-[#f5f5f5] p-0.5 rounded-md flex space-x-1">
-                    <button class="bg-[#ffffff] p-1 rounded-md flex items-center">
-                        <p class="text-sm">Pregunta</p>
+                <div class="flex items-center gap-2">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13.234 20.252 21 12.3"/>
+                            <path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486"/>
+                        </svg>
                     </button>
-                    <button class="bg-[#f5f5f5] p-1 rounded-md flex items-center">
-                        <p class="text-sm text-[#989795]">Reporte</p>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                            <path d="M2 12h20"/>
+                        </svg>
                     </button>
                 </div>
                 <div class="ml-auto flex items-center">
