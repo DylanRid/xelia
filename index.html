@@ -138,33 +138,36 @@
                 </svg>                              
             <h2 class="text-2xl">Buenos días, Dylan Sutton Chavez</h2>
         </div>
-        <form class="flex flex-col bg-[#ffffff] border border-[#e3e1dd] hover:border-[#74b0fb] focus-within:border-[#74b0fb] py-3 px-4 max-w-2xl w-full rounded-lg">
-            <textarea placeholder="Busca o pregunta lo que necesites de tu espacio de trabajo..." class="focus:outline-none w-full h-16 resize-none mb-2"></textarea>
+        <form class="flex flex-col bg-white border border-[#e3e1dd] hover:border-[#74b0fb] focus-within:border-[#74b0fb] py-3 px-4 max-w-2xl w-full rounded-lg">
+            <textarea id="inputArea" placeholder="Busca o pregunta lo que necesites de tu espacio de trabajo..." class="focus:outline-none w-full h-16 resize-none mb-2"></textarea>
+          
             <div class="flex items-center">
-                <div class="flex items-center gap-2">
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M13.234 20.252 21 12.3"/>
-                            <path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486"/>
-                        </svg>
-                    </button>
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-                            <path d="M2 12h20"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="ml-auto flex items-center">
-                    <button class="bg-[#d3d3d2] rounded-full p-1.5 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="currentColor" viewBox="0 0 256 256">
-                            <path d="M208.49,120.49a12,12,0,0,1-17,0L140,69V216a12,12,0,0,1-24,0V69L64.49,120.49a12,12,0,0,1-17-17l72-72a12,12,0,0,1,17,0l72,72A12,12,0,0,1,208.49,120.49Z" fill="#ffffff"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>            
-        </form>      
+              <div class="flex items-center gap-2">
+                <button type="button" class="p-1 rounded transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 stroke-[#858585] transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13.234 20.252 21 12.3" />
+                    <path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+                  </svg>
+                </button>
+          
+                <button type="button" class="p-1 rounded transition-colors selectable-svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 transition-colors stroke-[#858585]" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                    <path d="M2 12h20"></path>
+                  </svg>
+                </button>
+              </div>
+          
+              <div class="ml-auto flex items-center">
+                <button id="sendButton" type="submit" class="bg-[#d3d3d2] rounded-full p-1.5 flex items-center justify-center transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M208.49,120.49a12,12,0,0,1-17,0L140,69V216a12,12,0,0,1-24,0V69L64.49,120.49a12,12,0,0,1-17-17l72-72a12,12,0,0,1,17,0l72,72A12,12,0,0,1,208.49,120.49Z" fill="#ffffff"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+        </form>
         <div class="mt-3 max-w-2xl grid grid-cols-5 gap-3 text-[#50504D] text-sm">
             <button class="py-1 px-2 rounded-md bg-[#ffffff] border border-[#dedede] hover:border-[#BBBBBB] flex items-center gap-1 w-full overflow-hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="#50504D" stroke-width="2">
@@ -270,5 +273,22 @@
           }
         });
     </script>
+
+    <script>
+        const textarea = document.getElementById("inputArea");
+        const sendButton = document.getElementById("sendButton");
+    
+        textarea.addEventListener("input", () => {
+        const hasText = textarea.value.trim() !== "";
+        sendButton.classList.toggle("bg-[#74b0fb]", hasText);
+        sendButton.classList.toggle("bg-[#d3d3d2]", !hasText);
+        });
+    
+        const selectableSVG = document.querySelector(".selectable-svg svg");
+        selectableSVG?.addEventListener("click", () => {
+        selectableSVG.classList.toggle("stroke-[#74b0fb]");
+        selectableSVG.classList.toggle("stroke-[#858585]");
+        });
+    </script>  
 </body>
 </html>
